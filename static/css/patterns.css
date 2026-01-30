@@ -1,0 +1,100 @@
+/* Pattern Styles - Info Boxes, Transitions, etc. */
+
+/* Info Box - Consolidated for insights, instructions, and highlight */
+.info-box {
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+}
+
+/* Info Box - Insights Type */
+.info-box-insights {
+    background: linear-gradient(135deg, rgba(139, 154, 0, 0.08) 0%, rgba(255,255,255,0.4) 100%);
+    border-left: 4px solid #8B9A00;
+}
+
+.info-box-insights .info-box-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.info-box-insights .info-box-content {
+    font-size: 1em;
+    color: #4B5563;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Info Box - Instructions Type */
+.info-box-instructions {
+    background: linear-gradient(135deg, rgba(112, 195, 233, 0.12) 0%, rgba(112, 195, 233, 0.05) 100%);
+    border-left: 4px solid #70C3E9;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+.info-box-instructions .info-box-instructions-title {
+    margin: 0 0 12px 0;
+}
+
+.info-box-instructions .info-box-instructions-title strong {
+    color: #2C90C4;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.info-box-instructions .info-box-instructions-text {
+    margin: 0;
+}
+
+/* Info Box - Highlight Type */
+.info-box-highlight {
+    background: rgba(112, 195, 233, 0.08);
+    border: 2px solid #70C3E9;
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info-box-highlight .info-box-content {
+    color: #2c3e50;
+    font-size: 1.2em;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Transition Slide */
+.transition-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.transition-content {
+    background: transparent;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+}
+
+.transition-title {
+    font-size: 3em;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Slide Section */
+.slide-section {
+    background: white;
+}
+

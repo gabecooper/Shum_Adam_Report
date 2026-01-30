@@ -1,0 +1,24 @@
+/* Slides Page Specific Styles */
+@import url('base.css');
+@import url('components.css');
+@import url('sections.css');
+@import url('patterns.css');
+@import url('utilities.css');
+
+/* Additional slides-specific styles */
+.content {
+    padding: 35px 50px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Program Section */
+.program-section {
+    margin-bottom: 40px;
+}
+
+.program-chart-container {
+    height: 400px;
+    margin-top: 20px;
+}
+

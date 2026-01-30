@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M²'s 18×18 Compass: Shum Adam Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/base.css">
+<link rel="stylesheet" href="static/css/slides.css">
+<link rel="stylesheet" href="static/css/slides3_7.css"><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="static/js/slides3_7.js" defer></script></head>
+<body>
+<div class="report-container">
+    <div class="sections-container">
+<div class="logo-bar">
+    <div class="logo-container">
+        <img src="assets/m2-logo.png" alt="M² Logo" class="logo">
+    </div>
+    <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="logo-container">
+        <img src="assets/shum-adam-logo.png" alt="Shum Adam Logo" class="logo">
+    </div>
+</div>
+
+<!-- TRANSITION SLIDE: Alignment Section Introduction -->
+<div class="slide-section" style="background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);">
+    <div class="content"
+        style="background: transparent; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 60px;">
+        <h2
+            style="font-size: 3em; font-weight: 800; color: white; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">
+            Organizational, Programmatic and Community Alignment
+        </h2>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto;">
+            <!-- Organizational Priorities -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 35px; border-radius: 16px; border-left: 5px solid #70C3E9; backdrop-filter: blur(10px);">
+                <div
+                    style="width: 60px; height: 60px; background: #70C3E9; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">●</span>
+                </div>
+                <h3 style="font-size: 1.5em; font-weight: 700; color: white; margin-bottom: 15px;">Organizational
+                    Priorities</h3>
+                <p style="font-size: 1.1em; color: rgba(255,255,255,0.9); line-height: 1.6;">What do we as an
+                    organization (board & staff) believe is most important to focus on?</p>
+                <p style="font-size: 1em; color: #70C3E9; margin-top: 15px; font-weight: 600;">Data shown in blue</p>
+            </div>
+
+            <!-- Programmatic Alignment -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 35px; border-radius: 16px; border-left: 5px solid #8B9A00; backdrop-filter: blur(10px);">
+                <div
+                    style="width: 60px; height: 60px; background: #8B9A00; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">●</span>
+                </div>
+                <h3 style="font-size: 1.5em; font-weight: 700; color: white; margin-bottom: 15px;">Programmatic
+                    Alignment</h3>
+                <p style="font-size: 1.1em; color: rgba(255,255,255,0.9); line-height: 1.6;">Does our programming
+                    reflect our priorities?</p>
+                <p style="font-size: 1em; color: #A0B000; margin-top: 15px; font-weight: 600;">Data shown in green</p>
+            </div>
+
+            <!-- Community Priorities -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 35px; border-radius: 16px; border-left: 5px solid #DA8C0F; backdrop-filter: blur(10px);">
+                <div
+                    style="width: 60px; height: 60px; background: #DA8C0F; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">●</span>
+                </div>
+                <h3 style="font-size: 1.5em; font-weight: 700; color: white; margin-bottom: 15px;">Community Priorities
+                </h3>
+                <p style="font-size: 1.1em; color: rgba(255,255,255,0.9); line-height: 1.6;">What is our community
+                    looking to us for?</p>
+                <p style="font-size: 1em; color: #FCA830; margin-top: 15px; font-weight: 600;">Data shown in orange</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 03: Organizational Priorities -->
+<div class="slide-section">
+    <div class="slide-title-section">
+        <div class="slide-title-wrapper">
+            <div class="slide-number">03</div>
+            <div class="slide-title-content">
+                <h2 class="slide-title">Organizational Priorities</h2>
+                <p class="slide-subtitle">How important is this dimension to who we are as an organization?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div style="position: relative; height: 800px; max-width: 1200px; margin: 0 auto;">
+            <canvas id="missionChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 04: Programmatic Alignment -->
+<div class="slide-section">
+    <div class="slide-title-section">
+        <div class="slide-title-wrapper">
+            <div class="slide-number">04</div>
+            <div class="slide-title-content">
+                <h2 class="slide-title">Programmatic Alignment</h2>
+                <p class="slide-subtitle">
+                    <span style="color: rgba(255,255,255,0.95);">How important is this dimension to who we are as an
+                        organization? • To what extent is this dimension reflected in our current programs and
+                        offerings?</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div
+            style="background: linear-gradient(135deg, rgba(139, 154, 0, 0.08) 0%, rgba(255,255,255,0.4) 100%); border-left: 4px solid #8B9A00; border-radius: 12px; padding: 20px 25px; margin-bottom: 25px;">
+            <h3 style="font-size: 1.1em; font-weight: 700; color: #2c3e50; margin-bottom: 12px;">Key Insights</h3>
+            <p style="font-size: 1em; color: #4B5563; line-height: 1.6; margin: 0;">
+                <strong style="color: #2C90C4;">Strong alignment</strong> in Expression of God&#39;s Creation
+                and Mitzvot and Customs.
+                <strong style="color: #8B9A00;">Under-programmed:</strong>
+Jewish Community (+0.57), Contemporary Jewry (+0.48), Jewish Friendship (+0.40),  and Jewish People/Diversity (+0.39)                show significant gaps relative to organizational importance.
+            </p>
+        </div>
+
+        <div style="position: relative; height: 800px; max-width: 1200px; margin: 0 auto;">
+            <canvas id="programAlignmentChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 05: Community Priority Alignment -->
+<div class="slide-section">
+    <div class="slide-title-section">
+        <div class="slide-title-wrapper">
+            <div class="slide-number">05</div>
+            <div class="slide-title-content">
+                <h2 class="slide-title">Organizational and Community Priority Alignment</h2>
+                <p class="slide-subtitle">
+                    <span style="color: rgba(255,255,255,0.95);">Where do our priorities align – and where do they
+                        diverge?</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div
+            style="background: linear-gradient(135deg, rgba(100, 100, 100, 0.08) 0%, rgba(255,255,255,0.4) 100%); border-left: 4px solid #6B7280; border-radius: 12px; padding: 15px 25px; margin-bottom: 15px; text-align: center;">
+            <p style="font-size: 0.95em; color: #4B5563; line-height: 1.4; margin: 0;">
+                <strong style="color: #2c3e50;">💡 Tip:</strong> Click on any item in the legend above the chart to
+                show/hide that dataset for deeper comparison.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+            <!-- Program Alignment Insights -->
+            <div
+                style="background: linear-gradient(135deg, rgba(139, 154, 0, 0.08) 0%, rgba(255,255,255,0.4) 100%); border-left: 4px solid #8B9A00; border-radius: 12px; padding: 20px 25px;">
+                <h3 style="font-size: 1.05em; font-weight: 700; color: #2c3e50; margin-bottom: 10px;">Program Alignment
+                </h3>
+                <p style="font-size: 0.95em; color: #4B5563; line-height: 1.5; margin: 0;">
+                    <strong style="color: #2C90C4;">Strong alignment</strong> in God&#39;s Creation and Mitzvot/Customs.
+                    <strong style="color: #8B9A00;">Under-programmed:</strong>
+Jewish Community (+0.57), Contemporary Jewry (+0.48), Jewish Friendship (+0.40), Jewish People/Diversity (+0.39).
+                </p>
+            </div>
+
+            <!-- Community Alignment Insights -->
+            <div
+                style="background: linear-gradient(135deg, rgba(218, 140, 15, 0.08) 0%, rgba(255,255,255,0.4) 100%); border-left: 4px solid #DA8C0F; border-radius: 12px; padding: 20px 25px;">
+                <h3 style="font-size: 1.05em; font-weight: 700; color: #2c3e50; margin-bottom: 10px;">Community
+                    Alignment</h3>
+                <p style="font-size: 0.95em; color: #4B5563; line-height: 1.5; margin: 0;">
+                    <strong style="color: #2C90C4;">Strong alignment</strong> in Jewish Community and Jewish Friendship.
+                    <strong style="color: #DA8C0F;">Comparatively misaligned:</strong>
+Arts &amp; Culture (-0.51), History/Tradition (-0.47), Culinary Traditions (-0.44), Texts/Torah (+0.40).
+                </p>
+            </div>
+        </div>
+
+        <div style="position: relative; height: 800px; max-width: 1200px; margin: 0 auto;">
+            <canvas id="communityAlignmentChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 06: Priorities List Comparison -->
+<div class="slide-section">
+    <div class="slide-title-section">
+        <div class="slide-title-wrapper">
+            <div class="slide-number">06</div>
+            <div class="slide-title-content">
+                <h2 class="slide-title">Priorities List Comparison</h2>
+                <p class="slide-subtitle">
+                    <span style="color: rgba(255,255,255,0.95);">Where do our priorities align – and where do they
+                        diverge?</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Three columns -->
+        <div
+            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1400px; margin: 0 auto;">
+            <!-- Column 1: Organizational Priorities -->
+            <div>
+                <div
+                    style="background: linear-gradient(135deg, #70C3E9, #2C90C4); padding: 20px; border-radius: 12px 12px 0 0; text-align: center;">
+                    <h3 style="color: white; font-size: 1.2em; font-weight: 700; margin: 0;">Organizational Priorities
+                    </h3>
+                </div>
+                <div
+                    style="background: white; border-radius: 0 0 12px 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #cd5c5c; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #cd5c5c;">1</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Community</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #2e8b57; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #2e8b57;">2</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Friendship</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #696969; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #696969;">3</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">The Jewish People in its Diversity</span>
+                        </div>
+                        <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.75em; padding-left: 44px;">
+                            <span
+                                style="background: #69696925; color: #696969; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Programs:
+                                #9</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #800080; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #800080;">4</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish History, Memory, and Tradition</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #00bfff; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #00bfff;">5</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Texts, Torah, and Core Narratives</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #0000cd; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);  height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #0000cd;">6</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Rituals and Holidays</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: Programs/Offerings -->
+            <div>
+                <div
+                    style="background: linear-gradient(135deg, #A0B000, #8B9A00); padding: 20px; border-radius: 12px 12px 0 0; text-align: center;">
+                    <h3 style="color: white; font-size: 1.2em; font-weight: 700; margin: 0;">Programs/Offerings</h3>
+                </div>
+                <div
+                    style="background: white; border-radius: 0 0 12px 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #0000cd; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #0000cd;">1</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Rituals and Holidays</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #B8860B; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #B8860B;">2</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Hebrew and Jewish Terminology</span>
+                        </div>
+                        <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.75em; padding-left: 44px;">
+                            <span
+                                style="background: #B8860B25; color: #B8860B; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Org:
+                                #9</span>
+                            <span
+                                style="background: #B8860B25; color: #B8860B; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Community:
+                                #7</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #2e8b57; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #2e8b57;">3</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Friendship</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #cd5c5c; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #cd5c5c;">4</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Community</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #800080; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #800080;">5</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish History, Memory, and Tradition</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #00bfff; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);  height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #00bfff;">6</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Texts, Torah, and Core Narratives</span>
+                        </div>
+                        <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.75em; padding-left: 44px;">
+                            <span
+                                style="background: #00bfff25; color: #00bfff; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Community:
+                                #12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Community Priorities -->
+            <div>
+                <div
+                    style="background: linear-gradient(135deg, #DA8C0F, #C67A0A); padding: 20px; border-radius: 12px 12px 0 0; text-align: center;">
+                    <h3 style="color: white; font-size: 1.2em; font-weight: 700; margin: 0;">Community Priorities</h3>
+                </div>
+                <div
+                    style="background: white; border-radius: 0 0 12px 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #800080; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #800080;">1</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish History, Memory, and Tradition</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #cd5c5c; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #cd5c5c;">2</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Community</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #2e8b57; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #2e8b57;">3</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Friendship</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #0000cd; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #0000cd;">4</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Rituals and Holidays</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #ff00ff; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 12px; height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #ff00ff;">5</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Israel and its People</span>
+                        </div>
+                        <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.75em; padding-left: 44px;">
+                            <span
+                                style="background: #ff00ff25; color: #ff00ff; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Programs:
+                                #8</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: #EEEEEE66; border-left: 24px solid #808000; padding: 12px 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.06);  height: 85px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span
+                                style="font-size: 1.5em; font-weight: 800; min-width: 32px; color: #808000;">6</span>
+                            <span
+                                style="font-size: 1.05em; font-weight: 700; flex: 1; color: #1f2937; line-height: 1.2;">Jewish Role Models</span>
+                        </div>
+                        <div style="display: flex; gap: 8px; margin-top: 6px; font-size: 0.75em; padding-left: 44px;">
+                            <span
+                                style="background: #80800025; color: #808000; padding: 2px 8px; border-radius: 4px; font-weight: 700;">Programs:
+                                #7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TRANSITION SLIDE: Understanding the Alignment Matrix -->
+<div class="slide-section"
+    style="background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #2C3E50 100%); position: relative; overflow: hidden;">
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px);">
+    </div>
+
+    <div class="content" style="padding: 80px 60px; position: relative; z-index: 1; background: transparent;">
+        <h2
+            style="font-size: 2.8em; font-weight: 800; color: white; margin-bottom: 20px; text-align: center; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+            Understanding the Alignment Matrix
+        </h2>
+        <p
+            style="font-size: 1.15em; color: rgba(255,255,255,0.9); text-align: center; max-width: 900px; margin: 0 auto 50px auto; line-height: 1.6;">
+            We compare <strong>community priorities</strong> with <strong>program offerings</strong> using a threshold
+            of <strong>4</strong> (60th percentile) to identify high priorities and
+            programming. This creates four strategic quadrants:
+        </p>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; max-width: 1100px; margin: 0 auto;">
+            <!-- Q1: Continue -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px; border-left: 5px solid rgba(195, 214, 0, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(195, 214, 0, 0.85); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">✓</span>
+                </div>
+                <h3 style="font-size: 1.35em; font-weight: 700; color: white; margin-bottom: 12px;">CONTINUE: Top
+                    Priorities Aligned</h3>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 10px;">
+                    <strong style="color: rgba(195, 214, 0, 1);">High Community (≥4) + High Programs (≥4)</strong>
+                </p>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                    Areas where community priorities and program offerings are both strong. These are your strategic
+                    strengths—continue investing here.
+                </p>
+            </div>
+
+            <!-- Q2: Explore -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px; border-left: 5px solid rgba(209, 34, 63, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(209, 34, 63, 0.85); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">↑</span>
+                </div>
+                <h3 style="font-size: 1.35em; font-weight: 700; color: white; margin-bottom: 12px;">EXPLORE: Potential
+                    Opportunities</h3>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 10px;">
+                    <strong style="color: rgba(209, 34, 63, 1);">High Community (≥4) + Lower Programs (<4)</strong>
+                </p>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                    Community wants more than currently offered. These are growth opportunities—consider expanding
+                    programming in these areas.
+                </p>
+            </div>
+
+            <!-- Q3: Reflect -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px; border-left: 5px solid rgba(252, 196, 15, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(252, 196, 15, 0.85); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">⚖</span>
+                </div>
+                <h3 style="font-size: 1.35em; font-weight: 700; color: white; margin-bottom: 12px;">REFLECT: Potential
+                    Overinvestments</h3>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 10px;">
+                    <strong style="color: rgba(252, 196, 15, 1);">Lower Community (<4) + High Programs (≥4)</strong>
+                </p>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                    Programs exceed community demand. Consider whether these align with organizational priorities or
+                    could be rebalanced.
+                </p>
+            </div>
+
+            <!-- Q4: Review -->
+            <div
+                style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px; border-left: 5px solid rgba(112, 195, 233, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(112, 195, 233, 0.85); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <span style="font-size: 2em; font-weight: 800; color: white;">○</span>
+                </div>
+                <h3 style="font-size: 1.35em; font-weight: 700; color: white; margin-bottom: 12px;">REVIEW: Lower
+                    Priorities</h3>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 10px;">
+                    <strong style="color: rgba(112, 195, 233, 1);">Lower Community (<4) + Lower Programs (<4)</strong>
+                </p>
+                <p style="font-size: 0.95em; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                    Both community interest and programming are lower. These may be appropriate as-is, or could be
+                    strategic areas to develop if aligned with mission.
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-size: 1em; color: rgba(255,255,255,0.8); font-weight: 600;">
+                The next slide visualizes all 18 dimensions across these four quadrants
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 07: Community-Program Alignment Matrix -->
+<div class="slide-section" style="height: 720px; max-height: 720px; overflow: hidden;">
+    <div class="slide-title-section" style="padding: 15px 40px;">
+        <div class="slide-title-wrapper">
+            <div class="slide-number">07</div>
+            <div class="slide-title-content">
+                <h2 class="slide-title" style="font-size: 1.6em;">Community-Program Alignment Matrix</h2>
+                <p class="slide-subtitle" style="font-size: 0.85em;">
+                    <span style="color: rgba(255,255,255,0.95);">Strategic positioning of Jewish life dimensions across
+                        community priorities and program offerings</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div
+        style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; padding: 8px 25px 12px 25px; height: calc(720px - 95px);">
+        <!-- Left: Matrix Chart -->
+        <div
+            style="position: relative; background: rgba(249, 250, 251, 0.5); padding: 12px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.05); height: 100%; min-height: 0;">
+            <div style="height: 100%; position: relative;">
+                <canvas id="alignmentMatrix"></canvas>
+            </div>
+        </div>
+
+        <!-- Right: Quadrant Cards -->
+        <div style="display: grid; grid-template-rows: repeat(4, 1fr); gap: 7px; height: 100%; min-height: 0;">
+            <div
+                style="background: linear-gradient(135deg, rgba(195, 214, 0, 0.12) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid rgba(195, 214, 0, 0.85); border-radius: 8px; padding: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
+                <div
+                    style="font-weight: 800; font-size: 0.82em; color: #2c3e50; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    CONTINUE: TOP PRIORITIES ALIGNED</div>
+                <div style="font-size: 0.68em; color: #6B7280; margin-bottom: 5px; font-weight: 600;">
+High Community Priorities + High Program Offering
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.72em; color: #4B5563;">
+                    <li
+                        style="margin-bottom: 4px; line-height: 1.2;">
+                        <strong>Rituals/Holidays</strong> (Comm: 4.18, Prog: 4.26)
+                    </li>
+                </ul>
+            </div>
+            <div
+                style="background: linear-gradient(135deg, rgba(209, 34, 63, 0.12) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid rgba(209, 34, 63, 0.85); border-radius: 8px; padding: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
+                <div
+                    style="font-weight: 800; font-size: 0.82em; color: #2c3e50; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    EXPLORE: POTENTIAL OPPORTUNITIES</div>
+                <div style="font-size: 0.68em; color: #6B7280; margin-bottom: 5px; font-weight: 600;">
+High Community Priorities + Lower Program Offering
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.72em; color: #4B5563;">
+                    <li
+                        style="margin-bottom: 4px; line-height: 1.2;">
+                        <strong>Jewish Friendship</strong> (Comm: 4.22, Prog: 3.91)
+                    </li>
+                    <li
+                        style="margin-bottom: 4px; line-height: 1.2;">
+                        <strong>Role Models</strong> (Comm: 4.00, Prog: 3.71)
+                    </li>
+                    <li
+                        style="margin-bottom: 4px; line-height: 1.2;">
+                        <strong>Jewish Community</strong> (Comm: 4.37, Prog: 3.86)
+                    </li>
+                    <li
+                        style="margin-bottom: 4px; line-height: 1.2;">
+                        <strong>History/Tradition</strong> (Comm: 4.43, Prog: 3.83)
+                    </li>
+                    <li
+                        style="margin-bottom: 4px; line-height: 1.2;">
+                        <strong>Israel and its People</strong> (Comm: 4.07, Prog: 3.70)
+                    </li>
+                </ul>
+            </div>
+            <div
+                style="background: linear-gradient(135deg, rgba(252, 196, 15, 0.12) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid rgba(252, 196, 15, 0.85); border-radius: 8px; padding: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
+                <div
+                    style="font-weight: 800; font-size: 0.82em; color: #2c3e50; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    REFLECT: POTENTIAL OVERINVESTMENTS</div>
+                <div style="font-size: 0.68em; color: #6B7280; margin-bottom: 5px; font-weight: 600;">
+Lower Community Priorities + High Program Offering
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.72em; color: #4B5563;">
+                </ul>
+            </div>
+            <div
+                style="background: linear-gradient(135deg, rgba(112, 195, 233, 0.12) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid rgba(112, 195, 233, 0.85); border-radius: 8px; padding: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
+                <div
+                    style="font-weight: 800; font-size: 0.82em; color: #2c3e50; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    REVIEW: LOWER PRIORITIES</div>
+                <div style="font-size: 0.68em; color: #6B7280; margin-bottom: 5px; font-weight: 600;">
+Lower Community Priorities + Lower Program Offering
+                </div>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.72em; color: #4B5563;">
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>Jewish People/Diversity</strong> (Comm: 3.67, Prog: 3.65)
+                    </li>
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>Judaism&#39;s Relevance</strong> (Comm: 3.87, Prog: 3.57)
+                    </li>
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>Spirituality/Prayer</strong> (Comm: 3.28, Prog: 3.46)
+                    </li>
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>Justice/Tzedakah</strong> (Comm: 3.74, Prog: 3.41)
+                    </li>
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>Mitzvot/Customs</strong> (Comm: 3.50, Prog: 3.41)
+                    </li>
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>Nature/Environment</strong> (Comm: 3.04, Prog: 3.09)
+                    </li>
+                    <li
+                        style="margin-bottom: 2px; line-height: 1.15;">
+                        <strong>God&#39;s Creation</strong> (Comm: 3.35, Prog: 3.44)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Chart data from JSON - must be defined before external JS loads
+    const dimensionsData = [{"community": {"mean": 3.667, "rank": 11, "score": 3.67}, "id": 1, "mission": {"mean": 4.043}, "name": "The Jewish People in its Diversity", "programs": {"mean": 3.652}, "shortName": "Jewish People/Diversity"}, {"community": {"mean": 4.222, "rank": 3, "score": 4.22}, "id": 2, "mission": {"mean": 4.304}, "name": "Jewish Friendship", "programs": {"mean": 3.909}, "shortName": "Jewish Friendship"}, {"community": {"mean": 4.0, "rank": 6, "score": 4.0}, "id": 3, "mission": {"mean": 3.783}, "name": "Jewish Role Models", "programs": {"mean": 3.714}, "shortName": "Role Models"}, {"community": {"mean": 4.37, "rank": 2, "score": 4.37}, "id": 4, "mission": {"mean": 4.435}, "name": "Jewish Community", "programs": {"mean": 3.864}, "shortName": "Jewish Community"}, {"community": {"mean": 4.426, "rank": 1, "score": 4.43}, "id": 5, "mission": {"mean": 3.957}, "name": "Jewish History, Memory, and Tradition", "programs": {"mean": 3.826}, "shortName": "History/Tradition"}, {"community": {"mean": 3.87, "rank": 9, "score": 3.87}, "id": 6, "mission": {"mean": 3.773}, "name": "Judaism\u0027s Relevance to Life\u0027s Questions", "programs": {"mean": 3.571}, "shortName": "Judaism\u0027s Relevance"}, {"community": {"mean": 3.278, "rank": 16, "score": 3.28}, "id": 7, "mission": {"mean": 3.087}, "name": "God, Spirituality, and Prayer", "programs": {"mean": 3.455}, "shortName": "Spirituality/Prayer"}, {"community": {"mean": 4.185, "rank": 4, "score": 4.19}, "id": 8, "mission": {"mean": 3.913}, "name": "Rituals and Holidays", "programs": {"mean": 4.261}, "shortName": "Rituals/Holidays"}, {"community": {"mean": 3.741, "rank": 10, "score": 3.74}, "id": 9, "mission": {"mean": 3.591}, "name": "Justice and Tzedakah", "programs": {"mean": 3.409}, "shortName": "Justice/Tzedakah"}, {"community": {"mean": 3.5, "rank": 13, "score": 3.5}, "id": 10, "mission": {"mean": 3.391}, "name": "Mitzvot and Customs", "programs": {"mean": 3.409}, "shortName": "Mitzvot/Customs"}, {"community": {"mean": 3.037, "rank": 18, "score": 3.04}, "id": 11, "mission": {"mean": 3.304}, "name": "Holiness of Nature and the Environment", "programs": {"mean": 3.091}, "shortName": "Nature/Environment"}, {"community": {"mean": 3.352, "rank": 14, "score": 3.35}, "id": 12, "mission": {"mean": 3.435}, "name": "Expression of God\u0027s Creation", "programs": {"mean": 3.435}, "shortName": "God\u0027s Creation"}, {"community": {"mean": 3.556, "rank": 12, "score": 3.56}, "id": 13, "mission": {"mean": 3.957}, "name": "Jewish Texts, Torah, and Core Narratives", "programs": {"mean": 3.773}, "shortName": "Texts/Torah"}, {"community": {"mean": 4.074, "rank": 5, "score": 4.07}, "id": 14, "mission": {"mean": 3.87}, "name": "Israel and its People", "programs": {"mean": 3.696}, "shortName": "Israel and its People"}, {"community": {"mean": 3.981, "rank": 7, "score": 3.98}, "id": 15, "mission": {"mean": 3.783}, "name": "Hebrew and Jewish Terminology", "programs": {"mean": 3.957}, "shortName": "Hebrew/Terminology"}, {"community": {"mean": 3.222, "rank": 17, "score": 3.22}, "id": 16, "mission": {"mean": 2.783}, "name": "Jewish Culinary Traditions", "programs": {"mean": 3.091}, "shortName": "Culinary Traditions"}, {"community": {"mean": 3.34, "rank": 15, "score": 3.34}, "id": 17, "mission": {"mean": 2.826}, "name": "Jewish Arts and Culture", "programs": {"mean": 3.0}, "shortName": "Arts \u0026 Culture"}, {"community": {"mean": 3.981, "rank": 8, "score": 3.98}, "id": 18, "mission": {"mean": 3.652}, "name": "Issues Facing Contemporary Jewry", "programs": {"mean": 3.174}, "shortName": "Contemporary Jewry"}];
+    const alignmentMatrixData = {"communityThreshold": 4, "programThreshold": 4, "quadrants": {"continue": [8], "explore": [2, 3, 4, 5, 14], "reflect": [], "review": [1, 6, 7, 9, 10, 11, 12, 13, 15, 16, 17, 18]}};
+
+    // Transform dimensions data for charts
+    const dimensionNames = {};
+    if (dimensionsData && Array.isArray(dimensionsData)) {
+        dimensionsData.forEach(d => {
+            dimensionNames[d.id] = d.name;
+        });
+    }
+
+    // Mission data sorted by mean (highest to lowest)
+    const missionData = dimensionsData
+        .map(d => ({ dim: d.id, name: d.name, mean: d.mission.mean }))
+        .sort((a, b) => b.mean - a.mean);
+
+    // SLIDE 07 - Alignment Matrix Chart
+    // Prepare data arrays ordered by dimension ID (1-18)
+    const sortedDimensions = dimensionsData.slice().sort((a, b) => a.id - b.id);
+    const dimensionsAbbrev = sortedDimensions.map(d => d.shortName);
+    const programScores = sortedDimensions.map(d => d.programs.mean);
+    const communityScores = sortedDimensions.map(d => d.community.mean);
+
+    // Get thresholds from alignmentMatrixData
+    const programThreshold = alignmentMatrixData.programThreshold || 4;
+    const communityThreshold = alignmentMatrixData.communityThreshold || 4;
+
+    // Dynamically calculate axis ranges to center threshold with balanced margins
+    // Find the extreme point (furthest from threshold) and mirror to keep threshold centered
+    const margin = 0.1;
+
+    // Calculate max distance from threshold for each axis
+    let maxXDistanceBelow = 0, maxXDistanceAbove = 0;
+    let maxYDistanceBelow = 0, maxYDistanceAbove = 0;
+
+    programScores.forEach(score => {
+        if (score < programThreshold) {
+            maxXDistanceBelow = Math.max(maxXDistanceBelow, programThreshold - score);
+        } else {
+            maxXDistanceAbove = Math.max(maxXDistanceAbove, score - programThreshold);
+        }
+    });
+
+    communityScores.forEach(score => {
+        if (score < communityThreshold) {
+            maxYDistanceBelow = Math.max(maxYDistanceBelow, communityThreshold - score);
+        } else {
+            maxYDistanceAbove = Math.max(maxYDistanceAbove, score - communityThreshold);
+        }
+    });
+
+    // Use the larger distance (plus margin) for both sides to center the threshold
+    const xMaxDistance = Math.max(maxXDistanceBelow, maxXDistanceAbove) + margin;
+    const yMaxDistance = Math.max(maxYDistanceBelow, maxYDistanceAbove) + margin;
+
+    const xMin = programThreshold - xMaxDistance;
+    const xMax = programThreshold + xMaxDistance;
+    const yMin = communityThreshold - yMaxDistance;
+    const yMax = communityThreshold + yMaxDistance;
+
+    // Initialize matrix chart when DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+        const matrixCtx = document.getElementById('alignmentMatrix');
+        if (!matrixCtx) return;
+
+        const ctx = matrixCtx.getContext('2d');
+
+        const thresholdLinesPlugin = {
+            id: 'thresholdLines',
+            beforeDatasetsDraw: function (chart) {
+                const ctx = chart.ctx;
+                const chartArea = chart.chartArea;
+                const xScale = chart.scales.x;
+                const yScale = chart.scales.y;
+
+                const xPosition = xScale.getPixelForValue(programThreshold);
+                const yPosition = yScale.getPixelForValue(communityThreshold);
+
+                ctx.save();
+
+                // Vertical line
+                ctx.beginPath();
+                ctx.setLineDash([]);
+                ctx.lineWidth = 2.5;
+                ctx.strokeStyle = 'rgba(107, 114, 128, 0.6)';
+                ctx.moveTo(xPosition, chartArea.top);
+                ctx.lineTo(xPosition, chartArea.bottom);
+                ctx.stroke();
+
+                // Horizontal line
+                ctx.beginPath();
+                ctx.setLineDash([]);
+                ctx.lineWidth = 2.5;
+                ctx.strokeStyle = 'rgba(107, 114, 128, 0.6)';
+                ctx.moveTo(chartArea.left, yPosition);
+                ctx.lineTo(chartArea.right, yPosition);
+                ctx.stroke();
+
+                ctx.restore();
+            }
+        };
+
+        const labelPlugin = {
+            id: 'labelPlugin',
+            afterDatasetsDraw: function (chart) {
+                const ctx = chart.ctx;
+                const chartArea = chart.chartArea;
+
+                ctx.save();
+                ctx.font = '600 9px Manrope';
+                ctx.textBaseline = 'middle';
+
+                // Helper: Obstacles definition
+                // stored as { type: 'rect'|'line', ...data }
+                const obstacles = [];
+                const padding = 2; // Vertical padding between labels
+
+                // Add Threshold Lines as Obstacles
+                const xThresholdPix = chart.scales.x.getPixelForValue(programThreshold);
+                const yThresholdPix = chart.scales.y.getPixelForValue(communityThreshold);
+
+                // Vertical Threshold Line Obstacle
+                obstacles.push({
+                    type: 'rect',
+                    left: xThresholdPix - 2,
+                    right: xThresholdPix + 2,
+                    top: chartArea.top,
+                    bottom: chartArea.bottom
+                });
+
+                // Horizontal Threshold Line Obstacle
+                obstacles.push({
+                    type: 'rect',
+                    left: chartArea.left,
+                    right: chartArea.right,
+                    top: yThresholdPix - 2,
+                    bottom: yThresholdPix + 2
+                });
+
+                // Helper: Line Segment Intersection
+                function lineIntersectsLine(x1, y1, x2, y2, x3, y3, x4, y4) {
+                    const denominator = ((x2 - x1) * (y4 - y3)) - ((y2 - y1) * (x4 - x3));
+                    if (denominator === 0) return false;
+                    const a = ((y1 - y3) * (x4 - x3)) - ((x1 - x3) * (y4 - y3));
+                    const b = ((y1 - y3) * (x2 - x1)) - ((x1 - x3) * (y2 - y1));
+                    const r = a / denominator;
+                    const s = b / denominator;
+                    return (r >= 0 && r <= 1) && (s >= 0 && s <= 1);
+                }
+
+                function checkCollision(x, y, w, h) {
+                    const l = x;
+                    const r = x + w;
+                    const t = y - h / 2;
+                    const b = y + h / 2;
+
+                    // 1. Check Chart Boundaries
+                    if (l < chartArea.left || r > chartArea.right || t < chartArea.top || b > chartArea.bottom) {
+                        return true;
+                    }
+
+                    // 2. Check Obstacles
+                    for (const ob of obstacles) {
+                        if (ob.type === 'rect' || !ob.type) {
+                            if (l < ob.right + 2 && r > ob.left - 2 && t < ob.bottom + padding && b > ob.top - padding) {
+                                return true;
+                            }
+                        } else if (ob.type === 'line') {
+                            // Broad phase
+                            const minX = Math.min(ob.x1, ob.x2);
+                            const maxX = Math.max(ob.x1, ob.x2);
+                            const minY = Math.min(ob.y1, ob.y2);
+                            const maxY = Math.max(ob.y1, ob.y2);
+
+                            // Expand broad phase slightly for safety
+                            if (l > maxX + 2 || r < minX - 2 || t > maxY + 2 || b < minY - 2) continue;
+
+                            // 1. Text Rect vs Line Segment
+                            // Check if line intersects any of the 4 sides of the rect
+                            // Top: (l,t)-(r,t)
+                            if (lineIntersectsLine(ob.x1, ob.y1, ob.x2, ob.y2, l, t, r, t)) return true;
+                            // Bottom: (l,b)-(r,b)
+                            if (lineIntersectsLine(ob.x1, ob.y1, ob.x2, ob.y2, l, b, r, b)) return true;
+                            // Left: (l,t)-(l,b)
+                            if (lineIntersectsLine(ob.x1, ob.y1, ob.x2, ob.y2, l, t, l, b)) return true;
+                            // Right: (r,t)-(r,b)
+                            if (lineIntersectsLine(ob.x1, ob.y1, ob.x2, ob.y2, r, t, r, b)) return true;
+
+                            // Check if line is FULLY INSIDE rect (unlikely but possible)
+                            if (ob.x1 >= l && ob.x1 <= r && ob.y1 >= t && ob.y1 <= b) return true;
+                            if (ob.x2 >= l && ob.x2 <= r && ob.y2 >= t && ob.y2 <= b) return true;
+                        }
+                    }
+                    return false;
+                }
+
+                // Helper: Wrap text
+                function getLines(ctx, text, maxWidth) {
+                    const words = text.split(" ");
+                    const lines = [];
+                    let currentLine = words[0];
+
+                    for (let i = 1; i < words.length; i++) {
+                        const word = words[i];
+                        const width = ctx.measureText(currentLine + " " + word).width;
+                        if (width < maxWidth) {
+                            currentLine += " " + word;
+                        } else {
+                            lines.push(currentLine);
+                            currentLine = word;
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                }
+
+                // 1. Collect all visible points
+                const points = [];
+                chart.data.datasets.forEach((dataset, datasetIndex) => {
+                    const meta = chart.getDatasetMeta(datasetIndex);
+                    if (meta.hidden) return;
+
+                    meta.data.forEach((element, index) => {
+                        const dataPoint = dataset.data[index];
+                        if (!dataPoint) return;
+
+                        const p = {
+                            x: element.x,
+                            y: element.y,
+                            label: dataPoint.label,
+                            datasetIndex: datasetIndex,
+                            index: index
+                        };
+                        points.push(p);
+
+                        // Point Obstacle (Rect)
+                        obstacles.push({
+                            type: 'rect',
+                            left: p.x - 9,
+                            right: p.x + 9,
+                            top: p.y - 9,
+                            bottom: p.y + 9
+                        });
+                    });
+                });
+
+                // 2. Sort points to prioritize placement (Top to Bottom)
+                points.sort((a, b) => {
+                    if (Math.abs(a.y - b.y) > 1) return a.y - b.y;
+                    return a.x - b.x;
+                });
+
+                // 3. Place labels
+                points.forEach(point => {
+                    const originalText = point.label;
+                    const originalMetrics = ctx.measureText(originalText);
+                    const originalWidth = originalMetrics.width;
+                    const lineHeight = 11; // 9px font + padding
+
+                    let lines = [originalText];
+                    let textWidth = originalWidth;
+                    let textHeight = 10;
+
+                    let tx = point.x + 12;
+                    let ty = point.y;
+                    let moved = false;
+                    let onLeft = false;
+
+                    // Attempt 1: Right Side
+                    // Check if wrapping is needed
+                    if (tx + textWidth > chartArea.right - 5) {
+                        const maxWidth = chartArea.right - tx - 5;
+                        if (maxWidth > 30) { // Minimum width to attempt wrapping
+                            lines = getLines(ctx, originalText, maxWidth);
+                            // Recalculate width/height
+                            textWidth = 0;
+                            lines.forEach(l => {
+                                const w = ctx.measureText(l).width;
+                                if (w > textWidth) textWidth = w;
+                            });
+                            textHeight = lines.length * lineHeight;
+                        }
+                    }
+
+                    // Check collision with (potentially wrapped) dimensions
+                    let found = false;
+                    if (checkCollision(tx, ty, textWidth, textHeight)) {
+                        moved = true;
+
+                        const step = 8;
+                        const maxSteps = 20;
+
+                        // Search Vertical on Right
+                        for (let k = 1; k <= maxSteps; k++) {
+                            // Down
+                            let tryY = point.y + k * step;
+                            if (!checkCollision(tx, tryY, textWidth, textHeight)) {
+                                ty = tryY;
+                                found = true;
+                                break;
+                            }
+                            // Up
+                            tryY = point.y - k * step;
+                            if (!checkCollision(tx, tryY, textWidth, textHeight)) {
+                                ty = tryY;
+                                found = true;
+                                break;
+                            }
+                        }
+                    } else {
+                        found = true;
+                    }
+
+                    // Attempt 2: Left Side Fallback
+                    if (!found) {
+                        onLeft = true;
+                        // Reset to single line for left side fall back
+                        lines = [originalText];
+                        textWidth = originalWidth;
+                        textHeight = 10;
+
+                        let tryLeftX = point.x - 12 - textWidth;
+
+                        // Check Center Left
+                        if (!checkCollision(tryLeftX, point.y, textWidth, textHeight)) {
+                            tx = tryLeftX; // set tx
+                            ty = point.y;
+                            found = true;
+                        } else {
+                            moved = true;
+                            const step = 8;
+                            const maxSteps = 20;
+
+                            // Search Vertical on Left
+                            for (let k = 1; k <= maxSteps; k++) {
+                                // Down
+                                let tryY = point.y + k * step;
+                                if (!checkCollision(tryLeftX, tryY, textWidth, textHeight)) {
+                                    tx = tryLeftX;
+                                    ty = tryY;
+                                    found = true;
+                                    break;
+                                }
+                                // Up
+                                tryY = point.y - k * step;
+                                if (!checkCollision(tryLeftX, tryY, textWidth, textHeight)) {
+                                    tx = tryLeftX;
+                                    ty = tryY;
+                                    found = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        // Fallback if blocked
+                        if (!found) {
+                            tx = tryLeftX;
+                            ty = point.y;
+                        }
+                    }
+
+                    // Register occupied space for this LABEL (Rect)
+                    obstacles.push({
+                        type: 'rect',
+                        left: tx,
+                        right: tx + textWidth,
+                        top: ty - textHeight / 2,
+                        bottom: ty + textHeight / 2
+                    });
+
+                    // Draw leader line if moved or onLeft
+                    if (moved || onLeft) {
+                        ctx.beginPath();
+                        ctx.lineWidth = 1;
+                        ctx.strokeStyle = 'rgba(44, 62, 80, 0.4)';
+                        ctx.moveTo(point.x, point.y);
+
+                        let lineEndX = onLeft ? (tx + textWidth) : tx;
+
+                        ctx.lineTo(lineEndX, ty);
+                        ctx.stroke();
+
+                        // Register Leader Line as Obstacle (Line Segment)
+                        obstacles.push({
+                            type: 'line',
+                            x1: point.x,
+                            y1: point.y,
+                            x2: lineEndX,
+                            y2: ty
+                        });
+                    }
+
+                    // Draw text
+                    ctx.fillStyle = 'rgba(44, 62, 80, 0.9)';
+                    ctx.textAlign = 'left';
+
+                    let lineY = ty - ((lines.length - 1) * lineHeight) / 2;
+                    lines.forEach(l => {
+                        ctx.fillText(l, tx, lineY);
+                        lineY += lineHeight;
+                    });
+                });
+
+                ctx.restore();
+            }
+        };
+
+        const alignmentChart = new Chart(ctx, {
+            type: 'scatter',
+            plugins: [thresholdLinesPlugin, labelPlugin],
+            data: {
+                datasets: [
+                    {
+                        label: 'Continue: Top Priorities',
+                        data: dimensionsAbbrev.map((d, i) => {
+                            const x = programScores[i];
+                            const y = communityScores[i];
+                            if (x >= programThreshold && y >= communityThreshold) {
+                                return { x: x, y: y, label: d };
+                            }
+                            return null;
+                        }).filter(item => item !== null),
+                        backgroundColor: 'rgba(195, 214, 0, 0.85)',
+                        borderColor: 'rgba(255, 255, 255, 0.9)',
+                        borderWidth: 2.5,
+                        pointRadius: 8,
+                        pointHoverRadius: 10
+                    },
+                    {
+                        label: 'Explore: Opportunities',
+                        data: dimensionsAbbrev.map((d, i) => {
+                            const x = programScores[i];
+                            const y = communityScores[i];
+                            if (x < programThreshold && y >= communityThreshold) {
+                                return { x: x, y: y, label: d };
+                            }
+                            return null;
+                        }).filter(item => item !== null),
+                        backgroundColor: 'rgba(209, 34, 63, 0.85)',
+                        borderColor: 'rgba(255, 255, 255, 0.9)',
+                        borderWidth: 2.5,
+                        pointRadius: 8,
+                        pointHoverRadius: 10
+                    },
+                    {
+                        label: 'Reflect: Overinvestments',
+                        data: dimensionsAbbrev.map((d, i) => {
+                            const x = programScores[i];
+                            const y = communityScores[i];
+                            if (x >= programThreshold && y < communityThreshold) {
+                                return { x: x, y: y, label: d };
+                            }
+                            return null;
+                        }).filter(item => item !== null),
+                        backgroundColor: 'rgba(252, 196, 15, 0.85)',
+                        borderColor: 'rgba(255, 255, 255, 0.9)',
+                        borderWidth: 2.5,
+                        pointRadius: 8,
+                        pointHoverRadius: 10
+                    },
+                    {
+                        label: 'Review: Lower Priorities',
+                        data: dimensionsAbbrev.map((d, i) => {
+                            const x = programScores[i];
+                            const y = communityScores[i];
+                            if (x < programThreshold && y < communityThreshold) {
+                                return { x: x, y: y, label: d };
+                            }
+                            return null;
+                        }).filter(item => item !== null),
+                        backgroundColor: 'rgba(112, 195, 233, 0.85)',
+                        borderColor: 'rgba(255, 255, 255, 0.9)',
+                        borderWidth: 2.5,
+                        pointRadius: 8,
+                        pointHoverRadius: 10
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    datalabels: {
+                        display: false
+                    },
+                    title: {
+                        display: false
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false,
+                        external: function (context) {
+                            // Get or create tooltip element
+                            let tooltipEl = document.getElementById('matrix-tooltip');
+                            if (!tooltipEl) {
+                                tooltipEl = document.createElement('div');
+                                tooltipEl.id = 'matrix-tooltip';
+                                tooltipEl.style.cssText = `
+                                    position: absolute;
+                                    background: rgba(44, 62, 80, 0.95);
+                                    color: white;
+                                    padding: 12px 16px;
+                                    border-radius: 8px;
+                                    font-family: 'Manrope', sans-serif;
+                                    font-size: 12px;
+                                    pointer-events: none;
+                                    z-index: 9999;
+                                    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                                    transition: opacity 0.2s ease;
+                                `;
+                                document.body.appendChild(tooltipEl);
+                            }
+
+                            const tooltipModel = context.tooltip;
+
+                            // Hide if no tooltip
+                            if (tooltipModel.opacity === 0) {
+                                tooltipEl.style.opacity = 0;
+                                return;
+                            }
+
+                            // Set content
+                            if (tooltipModel.body) {
+                                const dataPoint = tooltipModel.dataPoints[0];
+                                const title = dataPoint.raw.label || '';
+                                const x = dataPoint.raw.x.toFixed(2);
+                                const y = dataPoint.raw.y.toFixed(2);
+
+                                tooltipEl.innerHTML = `
+                                    <div style="font-size: 14px; font-weight: 700; margin-bottom: 8px;">${title}</div>
+                                    <div style="font-weight: 500;">Program Offering: ${x}</div>
+                                    <div style="font-weight: 500;">Community Priority: ${y}</div>
+                                `;
+                            }
+
+                            // Position tooltip
+                            const position = context.chart.canvas.getBoundingClientRect();
+                            tooltipEl.style.opacity = 1;
+                            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+                            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY - 10 + 'px';
+                            tooltipEl.style.transform = 'translateX(-50%) translateY(-100%)';
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Program Offering (Scale 1-5)',
+                            font: { size: 12, family: 'Manrope', weight: '600' },
+                            color: '#4B5563'
+                        },
+                        min: xMin,
+                        max: xMax,
+                        ticks: {
+                            stepSize: 0.5,
+                            font: { size: 10, family: 'Manrope', weight: '500' },
+                            color: '#6B7280'
+                        },
+                        grid: {
+                            color: 'rgba(0,0,0,0.05)',
+                            drawBorder: false
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Community Priority (Scale 1-5)',
+                            font: { size: 12, family: 'Manrope', weight: '600' },
+                            color: '#4B5563'
+                        },
+                        min: yMin,
+                        max: yMax,
+                        ticks: {
+                            stepSize: 0.5,
+                            font: { size: 10, family: 'Manrope', weight: '500' },
+                            color: '#6B7280'
+                        },
+                        grid: {
+                            color: 'rgba(0,0,0,0.05)',
+                            drawBorder: false
+                        }
+                    }
+                },
+                layout: {
+                    padding: {
+                        // Match Reference padding: asymmetric to account for labels on right side
+                        // The right padding is larger to accommodate point labels
+                        left: 5,
+                        right: 110,  // Extra space for dimension labels drawn on right side of points
+                        top: 5,
+                        bottom: 5
+                    }
+                }
+            }
+        });
+    });
+</script>
+    </div>
+<div class="return-to-index">
+    <a href="index.html#detailed-analysis" class="return-button">Return to Index</a>
+</div>
+</div>
+</body>
+</html>

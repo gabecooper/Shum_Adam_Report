@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M²'s 18×18 Compass: Shum Adam Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/slides.css">
+    <link rel="stylesheet" href="static/css/slides1_2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="static/js/slides1_2.js" defer></script>
+</head>
+
+<body>
+    <div class="report-container">
+        <div class="sections-container">
+            <div class="logo-bar">
+                <div class="logo-container">
+                    <img src="assets/m2-logo.png" alt="M² Logo" class="logo">
+                </div>
+                <div class="logo-container">
+                    <img src="assets/logo.png" alt="Logo" class="logo">
+                </div>
+                <div class="logo-container">
+                    <img src="assets/shum-adam-logo.png" alt="Shum Adam Logo" class="logo">
+                </div>
+            </div>
+            <!-- SLIDE 01: Response Rates -->
+            <div class="slide-section">
+                <div class="slide-title-section">
+                    <div class="slide-title-wrapper">
+                        <div class="slide-number">01</div>
+                        <div class="slide-title-content">
+                            <h2 class="slide-title">Response Rates</h2>
+                            <p class="slide-subtitle">Response rates among those invited to participate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="summary-stats">
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <div class="stat-label">Total Respondents</div>
+                                <div class="stat-number">77</div>
+                                <div class="stat-percentage"></div>
+                                <div class="stat-response"><span class="stat-response-highlight">75%</span> response
+                                    rate</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <div class="stat-label">Community Members</div>
+                                <div class="stat-number">54</div>
+                                <div class="stat-percentage"></div>
+                                <div class="stat-response"><span class="stat-response-highlight">90%</span> response
+                                    rate</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <div class="stat-label">Staff Members</div>
+                                <div class="stat-number">21</div>
+                                <div class="stat-percentage"></div>
+                                <div class="stat-response"><span class="stat-response-highlight">70%</span> response
+                                    rate</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <div class="stat-label">Board Members</div>
+                                <div class="stat-number">2</div>
+                                <div class="stat-percentage"></div>
+                                <div class="stat-response"><span class="stat-response-highlight">15%</span> response
+                                    rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 02: Community Demographics -->
+            <div class="slide-section">
+                <div class="slide-title-section">
+                    <div class="slide-title-wrapper">
+                        <div class="slide-number">02</div>
+                        <div class="slide-title-content">
+                            <h2 class="slide-title">Community Demographics</h2>
+                            <p class="slide-subtitle">Profile of community member respondents</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <!-- Program Participation Section -->
+                    <div class="program-section">
+                        <h3 class="section-title">School activities
+                        </h3>
+                        <p class="section-subtitle">School activities
+                            in which community members
+                            participate</p>
+                        <div class="program-chart-container">
+                            <canvas id="programChart"></canvas>
+                        </div>
+                        <p class="chart-footnote">Respondents could select multiple programs</p>
+                    </div>
+
+                    <!-- Demographics Grid -->
+                    <div class="demographics-grid">
+                        <!-- Age Groups Card -->
+                        <div class="demo-card">
+                            <h3 class="demo-title">Age Groups</h3>
+                            <div class="demo-chart-container">
+                                <canvas id="ageChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Gender Card -->
+                        <div class="demo-card">
+                            <h3 class="demo-title">Gender</h3>
+                            <div class="demo-chart-container">
+                                <canvas id="genderChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Focus/Perspective Card -->
+                        <div class="demo-card">
+                            <h3 class="demo-title">Respondent Focus</h3>
+                            <p class="section-subtitle"
+                                style="font-size: 0.85em; margin-bottom: 15px; font-style: italic;">When you
+                                consider the importance of Jewish aspects (e.g. identity, community, traditions) in
+                                relation to our
+                                organization, are you primarily thinking about...</p>
+                            <div class="demo-chart-container">
+                                <canvas id="viewpointChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Chart data from JSON - made available globally for external JS files
+                const programParticipationData = { "labels": ["Pre-school/pre-kindergarten", "Kindergarten", "Grade school (grades 1-5)", "Middle school (grades 6-8)"], "title": "School activities", "values": [11.1, 27.8, 44.4, 31.5] };
+                const ageData = { "labels": ["25\u201334 years", "35\u201344 years", "45\u201354 years", "55\u201364 years", "Prefer not to say"], "values": [1.9, 55.6, 29.6, 9.3, 3.7] };
+                const genderData = { "labels": ["Man", "Other", "Woman"], "values": [31.5, 9.3, 59.3] };
+                const viewpointData = { "labels": ["The experience/growth of your child/children", "The experience/growth of your family as a unit"], "values": [68.5, 31.5] };
+            </script>
+        </div>
+        <div class="return-to-index">
+            <a href="index.html#detailed-analysis" class="return-button">Return to Index</a>
+        </div>
+    </div>
+</body>
+
+</html>

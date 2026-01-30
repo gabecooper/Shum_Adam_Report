@@ -71,7 +71,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         minRotation: 0,
                         callback: function (value) {
                             const label = this.getLabelForValue(value);
-                            return label.length > 20 ? label.substr(0, 20) + '...' : label;
+                            const maxWidth = 20; // Max characters per line
+                            if (label.length <= maxWidth) return label;
+                            // Wrap into multiple lines
+                            const words = label.split(' ');
+                            const lines = [];
+                            let currentLine = '';
+                            words.forEach(word => {
+                                if ((currentLine + ' ' + word).trim().length <= maxWidth) {
+                                    currentLine = (currentLine + ' ' + word).trim();
+                                } else {
+                                    if (currentLine) lines.push(currentLine);
+                                    currentLine = word;
+                                }
+                            });
+                            if (currentLine) lines.push(currentLine);
+                            return lines;
                         }
                     },
                     grid: { display: false }
